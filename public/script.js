@@ -1,25 +1,22 @@
 window.onload = function() {
-    // Перевіряємо, чи вже була прийнята згода на кукі
+
     if (!getCookie("cookiesAccepted")) {
         document.getElementById("cookieConsent").style.display = "block";
     } else {
-        // Заповнюємо поле email з кукі, якщо воно існує
         const savedEmail = getCookie("userEmail");
         if (savedEmail) {
             document.getElementById("email").value = savedEmail;
         }
     }
 
-    // Обробляємо натискання кнопки "Прийняти"
     document.getElementById("acceptCookies").onclick = function() {
         setCookie("cookiesAccepted", "true", 5);
         document.getElementById("cookieConsent").style.display = "none";
     }
 
-    // Обробляємо відправку форми
     document.getElementById('contact-form').addEventListener('submit', function(event) {
         event.preventDefault();
-
+        
         const formData = new FormData(event.target);
         const formObject = Object.fromEntries(formData.entries());
 
@@ -45,7 +42,6 @@ window.onload = function() {
     });
 };
 
-// Функція для створення кукі
 function setCookie(name, value, days) {
     let expires = "";
     if (days) {
@@ -56,7 +52,6 @@ function setCookie(name, value, days) {
     document.cookie = name + "=" + (value || "") + expires + "; path=/";
 }
 
-// Функція для отримання кукі за назвою
 function getCookie(name) {
     let nameEQ = name + "=";
     let ca = document.cookie.split(';');

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контактна форма</title>
+    
+</head>
+<body>
+    <h1>Контактна форма</h1>
+    <form id="contact-form" action="send_email.php" method="post">
+        <label for="name">Ім'я:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+        <label for="message">Повідомлення:</label>
+        <textarea id="message" name="message" required></textarea><br><br>
+        <button type="submit">Відправити</button>
+    </form>
+    <div id="cookieConsent" style="display: none;">
+        <p>Цей сайт використовує кукі для покращення вашого досвіду. <a href="/privacy-policy">Дізнатися більше</a>.</p>
+        <button id="acceptCookies">Прийняти</button>
+      </div>
+    <style>
+        #cookieConsent {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #000;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  z-index: 1000;
+}
+    </style>
+    <script src="script.js"></script>
+
+</body>
+</html>

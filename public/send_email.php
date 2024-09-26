@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($data['name']) && isset($data[
     $email = htmlspecialchars($data['email']);
     $message = htmlspecialchars($data['message']);
 
-    $to = "marryana.m@gmail.com"; // Змініть на вашу електронну адресу
+    $to = "marryana.m@gmail.com"; 
     $subject = "Новий запит з форми зворотного зв'язку";
     $body = "Ім'я: $name\nЕлектронна пошта: $email\nПовідомлення:\n$message";
     $headers = "From: $email\r\n";

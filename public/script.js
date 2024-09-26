@@ -20,7 +20,7 @@ window.onload = function() {
         const formData = new FormData(event.target);
         const formObject = Object.fromEntries(formData.entries());
 
-        // Зберігаємо email в кукі на 5 днів
+        // save cookie 5 days
         setCookie("userEmail", formObject.email, 5);
 
         fetch('send_email.php', {
